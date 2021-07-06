@@ -6,8 +6,11 @@
 //
 
 #import "LoginViewController.h"
+#import "Parse/Parse.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
@@ -16,6 +19,61 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+//code taken from CodePath except call to failedAttempt and performSegueWithIdentifier
+- (IBAction)onLogin:(id)sender {
+    [self checkEmptyFields];
+    
+    NSString *username = self.usernameField.text;
+    NSString *password = self.passwordField.text;
+    
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+        if (error != nil) {
+            NSLog(@"User log in failed: %@", error.localizedDescription);
+            [self failedAttempt:[NSString stringWithFormat:(@"Login Failed: %@", error.localizedDescription)]];
+        } else {
+            NSLog(@"User logged in successfully");
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+        }
+    }];
+}
+
+//code taken from CodePath except call to failedAttempt and performSegueWithIdentifier
+- (IBAction)onSignUp:(id)sender {
+    [self checkEmptyFields];
+    
+    PFUser *newUser = [PFUser user];
+    
+    newUser.username = self.usernameField.text;
+    newUser.password = self.passwordField.text;
+    
+    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+        if (error != nil) {
+            NSLog(@"Error: %@", error.localizedDescription);
+            [self failedAttempt:[NSString stringWithFormat:(@"Error: %@", error.localizedDescription)]];
+        } else {
+            NSLog(@"User registered successfully");
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+        }
+    }];
+}
+
+-(void) checkEmptyFields{
+    if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""])
+        [self failedAttempt:@"Username/password is empty"];
+}
+
+- (void) failedAttempt:(NSString*) errorMessage{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Failed Attempt" message:errorMessage preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
+    [alert addAction:cancelAction];
+
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:^{}];
 }
 
 /*
