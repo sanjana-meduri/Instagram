@@ -19,6 +19,7 @@
 		E4049D9B2694E4AC008C39C8 /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4049D9A2694E4AC008C39C8 /* InstagramTests.m */; };
 		E4049DA62694E4AC008C39C8 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4049DA52694E4AC008C39C8 /* InstagramUITests.m */; };
 		E4DD74192694EB5500772095 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD74182694EB5500772095 /* LoginViewController.m */; };
+		E4DD741C2694F3E900772095 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD741B2694F3E900772095 /* HomeFeedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		E4049DA72694E4AC008C39C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4DD74172694EB5500772095 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E4DD74182694EB5500772095 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E4DD741A2694F3E900772095 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
+		E4DD741B2694F3E900772095 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				E4049D902694E4AC008C39C8 /* main.m */,
 				E4DD74172694EB5500772095 /* LoginViewController.h */,
 				E4DD74182694EB5500772095 /* LoginViewController.m */,
+				E4DD741A2694F3E900772095 /* HomeFeedViewController.h */,
+				E4DD741B2694F3E900772095 /* HomeFeedViewController.m */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4DD741C2694F3E900772095 /* HomeFeedViewController.m in Sources */,
 				E4DD74192694EB5500772095 /* LoginViewController.m in Sources */,
 				E4049D802694E4AB008C39C8 /* AppDelegate.m in Sources */,
 				E4049D912694E4AC008C39C8 /* main.m in Sources */,
