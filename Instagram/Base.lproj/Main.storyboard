@@ -107,16 +107,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3p-zT-aCt">
-                                <rect key="frame" x="20" y="86" width="162" height="158"/>
+                                <rect key="frame" x="20" y="86" width="137" height="137"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.17722341559999999" green="0.6834612538" blue="0.11268817859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-Mi-WdQ">
+                                <rect key="frame" x="165" y="90" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.46663126389999998" green="0.66341523589999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OEi-v6-3kq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Post" id="XQo-jX-LJ5"/>
+                    <navigationItem key="navigationItem" title="Post" id="XQo-jX-LJ5">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="RmD-WJ-6ld">
+                            <connections>
+                                <action selector="onCancel:" destination="kAj-eR-XRX" id="8Mm-sh-mle"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="Sd0-Tt-VEX">
+                            <connections>
+                                <action selector="onPost:" destination="kAj-eR-XRX" id="w41-Gc-K5x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="composeTextView" destination="1HA-Mi-WdQ" id="jYT-6A-dVw"/>
                         <outlet property="imageView" destination="v3p-zT-aCt" id="w0p-wq-q3b"/>
                     </connections>
                 </viewController>
@@ -172,6 +192,9 @@
     <resources>
         <image name="feed_tab" width="25" height="25"/>
         <image name="insta_camera_btn" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

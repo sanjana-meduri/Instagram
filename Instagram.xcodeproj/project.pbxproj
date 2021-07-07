@@ -21,6 +21,7 @@
 		E4DD74192694EB5500772095 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD74182694EB5500772095 /* LoginViewController.m */; };
 		E4DD741C2694F3E900772095 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD741B2694F3E900772095 /* HomeFeedViewController.m */; };
 		E4DD741F2695FB0100772095 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD741E2695FB0100772095 /* ComposeViewController.m */; };
+		E4DD74222696055800772095 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD74212696055800772095 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		E4DD741B2694F3E900772095 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
 		E4DD741D2695FB0100772095 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		E4DD741E2695FB0100772095 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		E4DD74202696055800772095 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		E4DD74212696055800772095 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				E4DD741B2694F3E900772095 /* HomeFeedViewController.m */,
 				E4DD741D2695FB0100772095 /* ComposeViewController.h */,
 				E4DD741E2695FB0100772095 /* ComposeViewController.m */,
+				E4DD74202696055800772095 /* Post.h */,
+				E4DD74212696055800772095 /* Post.m */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				E4DD741F2695FB0100772095 /* ComposeViewController.m in Sources */,
 				E4049D912694E4AC008C39C8 /* main.m in Sources */,
 				E4049D832694E4AB008C39C8 /* SceneDelegate.m in Sources */,
+				E4DD74222696055800772095 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,9 +6,11 @@
 //
 
 #import "ComposeViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextView *composeTextView;
 
 @end
 
@@ -16,6 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.imageView.image = nil;
+    self.composeTextView.text = @"";
+    
+    self.composeTextView.delegate = self;
+    self.composeTextView.layer.borderWidth = 2.0f;
+    self.composeTextView.layer.borderColor = [[UIColor systemGrayColor] CGColor];
+    self.composeTextView.layer.cornerRadius = 8;
     
     [self getPicture:YES];
 }
@@ -66,6 +76,25 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+- (IBAction)onCancel:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (IBAction)onPost:(id)sender {
+    UIImage *imageToPost = self.imageView.image;
+    NSString *captionToPost = self.composeTextView.text;
+    
+    [Post postUserImage:imageToPost withCaption:captionToPost withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded){
+            NSLog(@"posted image successfuly");
+            [self dismissViewControllerAnimated:true completion:nil];
+        }
+        else{
+            NSLog(@"Error posting: %@", error.localizedDescription);
+        }
+    }];
 }
 
 /*
