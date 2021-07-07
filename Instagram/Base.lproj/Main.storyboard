@@ -82,6 +82,48 @@
             </objects>
             <point key="canvasLocation" x="978" y="113"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n2U-v9-rya">
+            <objects>
+                <navigationController id="jqj-LK-lGM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p4a-vk-Z3x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kAj-eR-XRX" kind="relationship" relationship="rootViewController" id="rDA-PL-4GF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YO1-t0-lN8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797" y="836"/>
+        </scene>
+        <!--Post-->
+        <scene sceneID="eUZ-8t-6XC">
+            <objects>
+                <viewController storyboardIdentifier="ComposeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kAj-eR-XRX" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jZb-cc-eIR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3p-zT-aCt">
+                                <rect key="frame" x="20" y="86" width="162" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.17722341559999999" green="0.6834612538" blue="0.11268817859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OEi-v6-3kq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post" id="XQo-jX-LJ5"/>
+                    <connections>
+                        <outlet property="imageView" destination="v3p-zT-aCt" id="w0p-wq-q3b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfv-5J-UzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705.7971014492755" y="835.71428571428567"/>
+        </scene>
         <!--Home-->
         <scene sceneID="MMP-jM-855">
             <objects>
@@ -97,11 +139,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6PS-nG-tAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="821"/>
+            <point key="canvasLocation" x="-980" y="836"/>
         </scene>
         <!--Home Feed-->
         <scene sceneID="VfZ-Er-Yif">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6f-cK-xyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomeFeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="px6-yX-9PR" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zWj-V3-hBx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -115,15 +158,20 @@
                                 <action selector="onLogout:" destination="px6-yX-9PR" id="NBN-Rt-9ul"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="Io5-3y-dVu">
+                            <connections>
+                                <segue destination="jqj-LK-lGM" kind="presentation" id="HcI-yD-EmB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M6f-cK-xyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="821"/>
+            <point key="canvasLocation" x="-106" y="836"/>
         </scene>
     </scenes>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

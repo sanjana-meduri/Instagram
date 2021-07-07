@@ -20,6 +20,7 @@
 		E4049DA62694E4AC008C39C8 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4049DA52694E4AC008C39C8 /* InstagramUITests.m */; };
 		E4DD74192694EB5500772095 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD74182694EB5500772095 /* LoginViewController.m */; };
 		E4DD741C2694F3E900772095 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD741B2694F3E900772095 /* HomeFeedViewController.m */; };
+		E4DD741F2695FB0100772095 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD741E2695FB0100772095 /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		E4DD74182694EB5500772095 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4DD741A2694F3E900772095 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
 		E4DD741B2694F3E900772095 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
+		E4DD741D2695FB0100772095 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		E4DD741E2695FB0100772095 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				E4DD74182694EB5500772095 /* LoginViewController.m */,
 				E4DD741A2694F3E900772095 /* HomeFeedViewController.h */,
 				E4DD741B2694F3E900772095 /* HomeFeedViewController.m */,
+				E4DD741D2695FB0100772095 /* ComposeViewController.h */,
+				E4DD741E2695FB0100772095 /* ComposeViewController.m */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				E4DD741C2694F3E900772095 /* HomeFeedViewController.m in Sources */,
 				E4DD74192694EB5500772095 /* LoginViewController.m in Sources */,
 				E4049D802694E4AB008C39C8 /* AppDelegate.m in Sources */,
+				E4DD741F2695FB0100772095 /* ComposeViewController.m in Sources */,
 				E4049D912694E4AC008C39C8 /* main.m in Sources */,
 				E4049D832694E4AB008C39C8 /* SceneDelegate.m in Sources */,
 			);
