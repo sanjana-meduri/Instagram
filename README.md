@@ -20,17 +20,17 @@ The following **optional** features are implemented:
 
 - [x] Run your app on your phone and use the camera to take the photo
 - [x] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
-- [ ] Show the username and creation time for each post
+- [x] Show the username and creation time for each post
+- [x] Style the login page to look like the real Instagram login page.
+- [x] Style the feed to look like the real Instagram feed.
 - [x] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
+- [ ] User can like a post and see number of likes for each post in the post details screen.
 - User Profiles:
   - [x] Allow the logged in user to add a profile photo
   - [ ] Display the profile photo with each post
   - [ ] Tapping on a post's username or profile photo goes to that user's profile page
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
-- [ ] User can like a post and see number of likes for each post in the post details screen.
-- [x] Style the login page to look like the real Instagram login page.
-- [x] Style the feed to look like the real Instagram feed.
 - [ ] Implement a custom camera view.
 
 The following **additional** features are implemented:
