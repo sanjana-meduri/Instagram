@@ -79,6 +79,7 @@
     [query includeKey:@"likeCount"];
     [query includeKey:@"commentCount"];
     [query includeKey:@"createdAt"];
+    [query includeKey:@"objectId"];
     [query includeKey:@"caption"];
     
     query.limit = numPosts;

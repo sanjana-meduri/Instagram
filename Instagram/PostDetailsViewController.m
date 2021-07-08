@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *commentCount;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *creationDateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *likeIcon;
 
 @end
 
@@ -25,6 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self populateDetails];
+    
+}
+
+- (void) populateDetails{
     self.imageView.file = self.post[@"image"];
     [self.imageView loadInBackground];
     
@@ -40,6 +46,15 @@
     self.commentCount.text = [NSString stringWithFormat:@"%@",  self.post[@"commentCount"]];
     
     self.usernameLabel.text = (self.post[@"author"])[@"username"];
+}
+
+- (IBAction)onLike:(id)sender {
+    
+    NSString *objectID = [@"???" stringByAppendingString:self.post[@"objectId"]];
+    NSLog(self.post[@"objectId"]);
+    
+    UIImage *likedIcon = [UIImage imageNamed:@"heart.fill"];
+    [self.likeIcon setImage:likedIcon];
 }
 
 /*
