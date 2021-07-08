@@ -53,10 +53,10 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
-    CGSize newSize = CGSizeMake(20, 20);
+    CGSize newSize = CGSizeMake(300, 300);
     UIImage *resizedImage = [self resizeImage:editedImage withSize:newSize];
     
-    [self.imageView setImage:editedImage];
+    [self.imageView setImage:resizedImage];
     
     
     // following line from codepath
