@@ -6,6 +6,7 @@
 //
 
 #import "PostCell.h"
+#import "NSDate+DateTools.h"
 
 @implementation PostCell
 
@@ -26,7 +27,13 @@
     self.imageView.file = post[@"image"];
     [self.imageView loadInBackground];
     
-    self.creationDateLabel.text = post[@"createdAt"];
+    NSDate *creationDate = post.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yy"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:creationDate];
+    
+    self.creationDateLabel.text = stringFromDate;
     
     self.captionLabel.text = post[@"caption"];
     

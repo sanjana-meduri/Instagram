@@ -24,7 +24,7 @@ The following **optional** features are implemented:
 - [x] Style the login page to look like the real Instagram login page.
 - [x] Style the feed to look like the real Instagram feed.
 - [x] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
-- [ ] User can like a post and see number of likes for each post in the post details screen.
+- [x] User can like a post and see number of likes for each post in the post details screen.
 - User Profiles:
   - [x] Allow the logged in user to add a profile photo
   - [ ] Display the profile photo with each post
@@ -35,12 +35,13 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Alert pops up if something goes wrong with login
+- [x] Password is hidden
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I would like to implement deletion of a user's post.
+2. I would like to implement notifications.
 
 ## Video Walkthrough
 

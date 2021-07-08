@@ -9,6 +9,7 @@
 @import Parse;
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "NSDate+DateTools.h"
 
 @interface PostDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -31,30 +32,33 @@
 }
 
 - (void) populateDetails{
-    self.imageView.file = self.post[@"image"];
+    self.imageView.file = self.post.image;
     [self.imageView loadInBackground];
     
-    NSDate *creationDate = self.post[@"createdAt"];
+    NSDate *creationDate = self.post.createdAt;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy"];
+    [dateFormatter setDateFormat:@"MM/dd/yy"];
     NSString *dateString = [dateFormatter stringFromDate:creationDate];
     self.creationDateLabel.text = dateString;
 
-    self.captionLabel.text = self.post[@"caption"];
+    self.captionLabel.text = self.post.caption;
     
-    self.likeCount.text = [NSString stringWithFormat:@"%@",  self.post[@"likeCount"]];
-    self.commentCount.text = [NSString stringWithFormat:@"%@",  self.post[@"commentCount"]];
+    self.likeCount.text = [NSString stringWithFormat:@"%@",  self.post.likeCount];
+    self.commentCount.text = [NSString stringWithFormat:@"%@",  self.post.commentCount];
     
-    self.usernameLabel.text = (self.post[@"author"])[@"username"];
+    self.usernameLabel.text = (self.post.author)[@"username"];
 }
 
 - (IBAction)onLike:(id)sender {
+    int numberOfLikes = [self.post.likeCount intValue] + 1;
+    self.post.likeCount = [NSNumber numberWithInt:numberOfLikes];
     
-    NSString *objectID = [@"???" stringByAppendingString:self.post[@"objectId"]];
-    NSLog(self.post[@"objectId"]);
-    
-    UIImage *likedIcon = [UIImage imageNamed:@"heart.fill"];
-    [self.likeIcon setImage:likedIcon];
+    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+            if (succeeded) {
+                self.likeCount.text = [NSString stringWithFormat:@"%@",  self.post.likeCount];
+            } else {
+                NSLog(@"Problem saving post: %@", error.localizedDescription);
+            }}];
 }
 
 /*
