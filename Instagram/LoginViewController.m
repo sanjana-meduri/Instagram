@@ -11,6 +11,7 @@
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (strong, nonatomic) IBOutlet UIView *view;
 
 @end
 
@@ -18,7 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+
+    gradient.frame = self.view.bounds;
+    gradient.colors = @[(id)[UIColor blueColor].CGColor, (id)[UIColor systemPinkColor].CGColor];
+
+    [self.view.layer insertSublayer:gradient atIndex:0];
 }
 
 //code taken from CodePath except call to failedAttempt and performSegueWithIdentifier
