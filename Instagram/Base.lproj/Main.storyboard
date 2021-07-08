@@ -491,10 +491,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="afw-Sc-KrI" customClass="PFImageView">
-                                <rect key="frame" x="20" y="158" width="375" height="300"/>
+                                <rect key="frame" x="20" y="158" width="374" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Vf1-aa-O8Z"/>
-                                    <constraint firstAttribute="width" constant="375" id="aNb-U8-hLZ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="914-Pm-J98">
@@ -557,6 +556,7 @@
                             <constraint firstItem="3cl-dr-hkJ" firstAttribute="top" secondItem="914-Pm-J98" secondAttribute="bottom" constant="12" id="Kf3-qi-mZ7"/>
                             <constraint firstItem="o7Q-Rb-wH0" firstAttribute="leading" secondItem="qGC-Di-HFK" secondAttribute="trailing" constant="2" id="VIj-au-Etu"/>
                             <constraint firstItem="afw-Sc-KrI" firstAttribute="leading" secondItem="NzV-H6-0wL" secondAttribute="leading" constant="20" id="WxO-Na-Ulk"/>
+                            <constraint firstItem="NzV-H6-0wL" firstAttribute="trailing" secondItem="afw-Sc-KrI" secondAttribute="trailing" constant="20" id="ZTJ-d7-27c"/>
                             <constraint firstItem="3cl-dr-hkJ" firstAttribute="top" secondItem="T1R-tg-lGs" secondAttribute="bottom" constant="7.5" id="dsL-hV-okG"/>
                             <constraint firstItem="914-Pm-J98" firstAttribute="leading" secondItem="T1R-tg-lGs" secondAttribute="trailing" constant="2" id="hPO-1P-Sgo"/>
                             <constraint firstItem="afw-Sc-KrI" firstAttribute="top" secondItem="Z0s-JH-ZlQ" secondAttribute="bottom" constant="20" id="ito-VA-N8C"/>
