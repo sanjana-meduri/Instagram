@@ -28,8 +28,12 @@
     self.imageView.file = self.post[@"image"];
     [self.imageView loadInBackground];
     
-    self.creationDateLabel.text = [NSString stringWithFormat:@"%@",  self.post[@"createdAt"]];
-    
+    NSDate *creationDate = self.post[@"createdAt"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy"];
+    NSString *dateString = [dateFormatter stringFromDate:creationDate];
+    self.creationDateLabel.text = dateString;
+
     self.captionLabel.text = self.post[@"caption"];
     
     self.likeCount.text = [NSString stringWithFormat:@"%@",  self.post[@"likeCount"]];

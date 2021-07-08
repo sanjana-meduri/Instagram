@@ -26,7 +26,7 @@
     self.imageView.file = post[@"image"];
     [self.imageView loadInBackground];
     
-    self.creationDateLabel.text = [NSString stringWithFormat:@"%@",  post[@"createdAt"]];
+    self.creationDateLabel.text = post[@"createdAt"];
     
     self.captionLabel.text = post[@"caption"];
     

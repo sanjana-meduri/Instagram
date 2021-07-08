@@ -28,7 +28,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
+        
     [self queryPosts];
     [self.tableView reloadData];
     
@@ -55,7 +55,33 @@
     [query includeKey:@"commentCount"];
     [query includeKey:@"createdAt"];
     [query includeKey:@"caption"];
-    query.limit = 20;
+    
+    int numPosts = 20;
+    query.limit = numPosts;
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = posts;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+}
+
+//explanation: i needed two similar query functions, one that takes in an int and one that has no input values, but objective c has no default parameters or method overloading. instead, i had to write two of the exact same function (including name), because the number of parameters actually differentiates the two functions from each other
+- (void) queryPosts:(int) numPosts{
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    [query includeKey:@"likeCount"];
+    [query includeKey:@"commentCount"];
+    [query includeKey:@"createdAt"];
+    [query includeKey:@"caption"];
+    
+    query.limit = numPosts;
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
@@ -83,16 +109,26 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    int additionalPostsCount = 20;
+    if(indexPath.row + 1 == [self.posts count]){
+        [self queryPosts:([self.posts count] + additionalPostsCount)];
+    }
+}
+
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    PostDetailsViewController *detailsViewController =  [segue destinationViewController];
-    UITableViewCell *tappedCell = sender;
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
     
-    Post *tappedPost = self.posts[indexPath.row];
-    detailsViewController.post = tappedPost;
+    if ([segue.identifier isEqual:@"detailsSegue"]){
+        PostDetailsViewController *detailsViewController =  [segue destinationViewController];
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        
+        Post *tappedPost = self.posts[indexPath.row];
+        detailsViewController.post = tappedPost;
+    }
 }
 
 
