@@ -23,8 +23,8 @@ The following **optional** features are implemented:
 - [x] Show the username and creation time for each post
 - [x] Style the login page to look like the real Instagram login page.
 - [x] Style the feed to look like the real Instagram feed.
-- [x] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
 - [x] User can like a post and see number of likes for each post in the post details screen.
+- [x] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
 - User Profiles:
   - [x] Allow the logged in user to add a profile photo
   - [ ] Display the profile photo with each post
@@ -47,7 +47,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='instagram.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' width=200 height=500/>
+
+The screen recording feature automatically hides the password field, so here is a screenshot of what that looks like:
+<img src='password.png' title='Screenshot' width='' alt='Screenshot' width=200 height=500pass/>
 
 GIF created with [Kap](https://getkap.co/).
 
